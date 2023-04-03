@@ -27,9 +27,14 @@ generateConfig(defaultConfig);
  * @param {JssConfig} defaultConfig Default configuration.
  */
 function generateConfig(defaultConfig: JssConfig): void {
+  console.log('generateConfig');
+  console.log(defaultConfig);
+
   jssConfigFactory
     .create(defaultConfig)
     .then((config) => {
+      console.log('writeConfig');
+      console.log(config);
       writeConfig(config);
     })
     .catch((e) => {
