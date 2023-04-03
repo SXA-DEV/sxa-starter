@@ -66,7 +66,7 @@ const config = {};\n`;
       let value = process.env[constantCase(prop)];
       configText += `config.${prop} = '${value}',\n`;
       // console.log(constantCase(prop));
-      // console.log("env2: " + process.env[constantCase(prop)]);
+      console.log("env2: " + value);
 
 
     } else {
