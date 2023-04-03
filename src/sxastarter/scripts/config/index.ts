@@ -30,7 +30,16 @@ export class JssConfigFactory {
     return (Object.values(plugins) as ConfigPlugin[])
       .sort((p1, p2) => p1.order - p2.order)
       .reduce(
-        (promise, plugin) => promise.then((config) => plugin.exec(config)),
+        (promise, plugin) => promise.then((config) => {
+          console.log('plugin');
+          console.log(plugin);
+
+          let r = plugin.exec(config)
+          console.log("config after ");
+          console.log(r);
+          return r;
+        }
+        ),
         Promise.resolve(defaultConfig)
       );
   }
