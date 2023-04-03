@@ -34,7 +34,7 @@ export class JssConfigFactory {
           console.log('plugin');
           console.log(plugin);
 
-          let r = plugin.exec(config)
+          const r = plugin.exec(config)
           console.log("config after ");
           console.log(r);
           return r;
